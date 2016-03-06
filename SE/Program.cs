@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using System.Configuration;
 
-namespace SE
+namespace SoftwareEngineeringProject_1
 {
     class Program
     {

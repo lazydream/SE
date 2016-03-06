@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SE
+namespace SoftwareEngineeringProject_1
 {
     public class StatisticEvent
     {
