@@ -43,13 +43,12 @@ namespace SoftwareEngineeringProject_1
         }
         private static void SetTimer()
         {
-            //StatisticAnalyzer analyzer = new StatisticAnalyzer();
             requestFromServerTimer = new Timer(double.Parse(ConfigurationManager.AppSettings["RequestPeriodInSeconds"]));
             showAnalyticsTimer = new Timer(showAnalyticsInterval);
 
             requestFromServerTimer.Elapsed += (source, elapsedEventArgs) =>
             {
-                List<StatisticEvent> eventList = StatisticsDownloader.GetStatisticsEvent();
+                List<StatisticEvent> eventList = StatisticDownloader.GetStatisticsEvent();
                 StatisticAnalyzer.AnalyzeRequestEvent(eventList);
             };
 

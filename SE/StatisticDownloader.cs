@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace SoftwareEngineeringProject_1
 {
-    static class StatisticsDownloader
+    static class StatisticDownloader
     {
 
         public static List<StatisticEvent> GetStatisticsEvent()
@@ -21,16 +21,16 @@ namespace SoftwareEngineeringProject_1
                 Console.WriteLine("Nothing happened");
                 return null;
             }
-            var statisticsEventArray = statisticEventsString.Trim('"').Split(';');
+            var statisticEventArray = statisticEventsString.Trim('"').Split(';');
 
             List<StatisticEvent> listOfEvents = new List<StatisticEvent>();
-            foreach (var statEvent in statisticsEventArray)
+            foreach (var statEvent in statisticEventArray)
             {
                 string[] genderAndCondition = statEvent.Split(':');
                 if (genderAndCondition.Length == 2)
                 {
-                    StatisticEvent statisticsEvent = new StatisticEvent { Gender = genderAndCondition[0], Condition = genderAndCondition[1] };
-                    listOfEvents.Add(statisticsEvent);
+                    StatisticEvent statisticEvent = new StatisticEvent { Gender = genderAndCondition[0], Condition = genderAndCondition[1] };
+                    listOfEvents.Add(statisticEvent);
                 };
                 Console.WriteLine(statEvent);
             }
